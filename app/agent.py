@@ -47,7 +47,6 @@ def _ask_groq(txn, reasons, decision, score):
     data = resp.json()
     return data["choices"][0]["message"]["content"].strip()
 
-
 def _fallback_explanation(reasons, decision, score):
     reason_text = "; ".join(r.lower() for r in reasons)
     if decision == "FRAUD":
